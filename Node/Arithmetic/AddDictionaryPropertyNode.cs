@@ -39,9 +39,7 @@ public class AddDictionaryPropertyNode : Node {
   }
 
   private DictionaryData AddProperty(DictionaryData dic, DictionaryPropertyData prop) {
-    var tempList = new List<DictionaryPropertyData>(dic.PropList);
-
-    tempList.Add(prop);
+    var tempList = new List<DictionaryPropertyData>(dic.PropList) { prop };
     dic.PropList = tempList.ToArray();
 
     return dic;

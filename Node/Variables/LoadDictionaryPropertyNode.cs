@@ -32,7 +32,7 @@ public class LoadDictionaryNode : Node {
   [Label("出力")]
   public DictionaryData OutputDictionary() {
     MyDictionary.PropList = Restore(Json);
-    SetDataInput(nameof(MyDictionary), MyDictionary, broadcast: true);
+    Broadcast();
     
     return MyDictionary;
   }
