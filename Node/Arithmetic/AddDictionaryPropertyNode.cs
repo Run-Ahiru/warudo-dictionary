@@ -30,8 +30,7 @@ public class AddDictionaryPropertyNode : Node {
   [DataOutput]
   [Label("出力")]
   public DictionaryData OutputDictionary() {
-    var dic = AddProperty(MyDictionary, Prop);
-    dic = DictionaryData.Init(MyDictionary);
+    var dic = DictionaryData.Init(AddProperty(MyDictionary, Prop));
     
     SetDataInput(nameof(MyDictionary), dic, broadcast: true);
   

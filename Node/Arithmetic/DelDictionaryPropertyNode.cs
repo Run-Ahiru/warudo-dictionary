@@ -30,8 +30,7 @@ public class DelDictionaryPropertyNode : Node {
   [DataOutput]
   [Label("出力")]
   public DictionaryData OutputDictionary() {
-    var dic = DelProperty(MyDictionary, Key);
-    dic = DictionaryData.Init(MyDictionary);
+    var dic = DictionaryData.Init(DelProperty(MyDictionary, Key));
     SetDataInput(nameof(MyDictionary), dic, broadcast: true);
 
     return MyDictionary;
